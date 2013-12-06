@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Xmldata>
+	<Visit id="archive">
+		<visitor id="d20130430"><![CDATA[61]]></visitor>
+		<visitor id="d20130501"><![CDATA[44]]></visitor>
+		<visitor id="d20130504"><![CDATA[63]]></visitor>
+		<visitor id="d20130506"><![CDATA[3]]></visitor>
+		<visitor id="d20130507"><![CDATA[21]]></visitor>
+		<visitor id="d20130802"><![CDATA[3]]></visitor>
+		<visitor id="d20130902"><![CDATA[2]]></visitor>
+		<visitor id="d20131205"><![CDATA[22]]></visitor>
+	</Visit>
+	<Visit id="online">
+		<visitor id="s192.168.1.4dnzulnpxvjbnwyxgtccjqjaavjqcwtwz"><![CDATA[1386235371]]></visitor>
+	</Visit>
+</Xmldata>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Xmldata>
+	<pgname><![CDATA[Amrit-Prithvi Trust]]></pgname>
+	<pgdesc><![CDATA[Education is the main key to development ]]></pgdesc>
+	<auname><![CDATA[Me]]></auname>
+	<auemail><![CDATA[myemail@mydomain.com]]></auemail>
+	<mode><![CDATA[all-recent]]></mode>
+	<theme><![CDATA[silver]]></theme>
+	<link href="" title="">My Links</link>
+	<link href="." title="">My PhotoGallery</link>
+	<link href="" title="">Other Links</link>
+	<link href="http://p.horm.org" title="Another Phormation">Phorm</link>
+	<lastcmntseen><![CDATA[0]]></lastcmntseen>
+	<showemail><![CDATA[hide]]></showemail>
+	<extra><![CDATA[]]></extra>
+	<opac><![CDATA[60]]></opac>
+	<jpegq><![CDATA[80]]></jpegq>
+	<bannedip><![CDATA[]]></bannedip>
+	<wvw><![CDATA[93086]]></wvw>
+	<copyright><![CDATA[&amp;lt;a href=&amp;quot;http://apt.org.np/gallery&amp;quot;&amp;gt;Amrit-Prithvi Trust&amp;lt;/a&amp;gt;]]></copyright>
+	<checkcateg><![CDATA[on]]></checkcateg>
+	<checkstory><![CDATA[off]]></checkstory>
+	<checklink><![CDATA[off]]></checklink>
+	<checkstat><![CDATA[off]]></checkstat>
+	<checkextra><![CDATA[off]]></checkextra>
+	<checkemail><![CDATA[off]]></checkemail>
+	<checkrss><![CDATA[off]]></checkrss>
+	<checkadmin><![CDATA[off]]></checkadmin>
+	<defjbn><![CDATA[50]]></defjbn>
+	<defrpc><![CDATA[20]]></defrpc>
+	<deftrc><![CDATA[10]]></deftrc>
+	<defrsc><![CDATA[5]]></defrsc>
+	<defrss><![CDATA[100]]></defrss>
+	<helplang><![CDATA[off]]></helplang>
+	<linktarget><![CDATA[_self]]></linktarget>
+	<pickneigh><![CDATA[categs]]></pickneigh>
+	<haswvw><![CDATA[yes]]></haswvw>
+	<updatecheck><![CDATA[disable]]></updatecheck>
+	<timediffer><![CDATA[0*60+0]]></timediffer>
+	<icon><![CDATA[]]></icon>
+</Xmldata>

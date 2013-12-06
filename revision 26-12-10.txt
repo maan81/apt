@@ -1,0 +1,61 @@
+2013-4-27
+-added amrit man's notice page + img
+-removed index.html in base
+-downloaded
+--------------------------
+
+2013-4-24
+-added marquee
+-removed latest
+--------------------------
+
+2012-5-21
+-hid news update
+--------------------------
+
+2012-4-20
+-updated home.php for the felication program 
+-updated to 28th minute
+-updated niharika as executive member
+--------------------------
+
+2012-4-20
+-removed body's incorrect background color from html
+-corrected a:visited background color from css
+-realigned 1.css
+-removed root's index.html
+--------------------------
+
+2012-4-19
+-corrected formating
+  -- added font family in css
+  -- added width 100% in root table
+-added nepali logo with corrected formating
+-corrected table borders better
+-added wscl's link
+--------------------------
+
+2012-4-18
+-corrected several spelling mistakes (finally!!)
+
+--------------------------
+
+2012-4-12
+-preloading 'loading image'
+-added border-radius:5px
+-removed border-collapse
+--------------------------
+
+-inserted isset($opt) in index.php, line 15
+-enabled logo in ie
+-modified link colors 
+-moved back,next buttons into h class & properly aligned them. index.php, line 44 & 1.css, line 
+-removed unnessary background color in body, 1.css line 46
+-added border-collpase in css
+-removed border problem from index.php & 1.css !!!!!!!!!!!!!!!
+-enabled javascript disabled links from index.php & topmenu.php
+
+--------------------------
+
+2001.23.05, 16:19
+-changed 'prithivi' to 'prithvi' in all pages

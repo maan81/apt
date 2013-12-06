@@ -1,0 +1,105 @@
+/* CSS Document */  
+/*all*/ 
+*{
+	font-family:Times New Roman,Garamond;
+}
+
+
+body{ 	
+	margin-left:auto; 	
+	margin-right:auto; 	
+	width:785px; 	
+	border:0px; 	
+	background-color:#CCC; 
+}   
+
+/*links*/ 
+a{ 	
+	font-size: 14px; 
+} 
+a:link {
+ 	color:#00F;
+ 	text-decoration:none; 	
+ 	background-color:#CCC;  
+} 
+a:visited { 	
+	color:#00F;
+	text-decoration:none; 	
+	background-color:#CCC; 
+} 
+a:hover {
+ 	color:#F00; 	
+ 	text-decoration:underline; 	
+ 	background-color:#BBB; 
+} 
+/* a:active { 	
+	text-decoration:underline; 	
+	background-color: #f0f; 
+}*/  
+
+/*head*/ 
+.head{ 	
+	/*background-color:#C6F;*/ 	
+	text-align:center; 	
+	border-bottom:1px solid #000; 
+}   
+
+/*main body*/ 
+#b1{ 	
+	/*vertical-align:top;*/ 
+	/*background-color:#EECEFF */ 	
+	/*float:right; 	
+	width:100%;*/ 	
+	padding:10px; 
+}   
+
+.head h1 {
+	margin-botton:0;
+}
+
+/*horizontal menu*/ 
+.h ul{ 	
+	list-style-type:none; 	
+	margin:0; 	
+	padding:0; 
+} 
+.h li{ 	
+	display:inline; 	
+	vertical-align:top; 	
+	width:15%; 
+}  
+#buttons{ 	
+	float:left; 	
+	margin:0 0 0 20px; 
+} 
+
+table,td,th{ 	
+	/*border-collapse:collapse;*/ 	
+	border:none; 	
+	font-size:14px;  
+} 
+
+/*vertical menu*/ 
+.v ul{ 	
+	list-style-type:none; 	
+	margin:0; 	
+	padding:5px 5px 5px 5px; 	
+	float:left; 	
+	text-align:left; 
+}
+
+/*footer*/ 
+.ff{ 	
+	text-align:center; 	
+	border-top:1px solid; 	
+	font-size:12px; 
+}  
+
+/*logo*/ 
+.logo{ 	
+	float:left; 	
+	width:100px; 	
+	height:85px; 	
+	padding:-5px 0px 0px 0px; 	
+	overflow:visible; 
+}
