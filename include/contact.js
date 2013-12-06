@@ -46,7 +46,7 @@
    }
    
    function get(obj) {
-      alert var poststr = "name=" + encodeURI( document.getElementById("txt_name").value ) +
+      var poststr = "name=" + encodeURI( document.getElementById("txt_name").value ) +
                     "&email=" + encodeURI( document.getElementById("txt_email").value ) +
 					"&comment=" + encodeURI( document.getElementById("txt_comment").value) +
 					"&codes=" + encodeURI( document.getElementById("txt_code").value );
