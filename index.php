@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="include/ckeditor.js"></script>
 	<script type="text/javascript">
 	var editor;
+	var curPage;
 
 	function createEditor()
 	{
@@ -72,6 +73,44 @@ console.log($data)
 		for(var i = 0; i<(document.getElementById('b1').children.length-1);i++){
 			document.getElementById('b1').children[i].style.display = "";
 		}
+
+	}
+
+	function saveEditor(){
+		if ( !document.getElementById('save') )
+			return;
+
+		var data = 'page='+curPage+'&contents='+editor.getData();
+		makepost('page/updatePage.php', 'b1', data);
+
+
+	    
+	    // var form = document.createElement("form");
+	    // form.setAttribute("method", "post");
+	    // form.setAttribute("action", "page/updatePage.php");
+	    // var params=new Array();
+	    // params["page"]=curPage;
+	    // params["contents"]=editor.getData();
+
+	    // for(var key in params) {
+	    //     if(params.hasOwnProperty(key)) {
+	    //         var hiddenField = document.createElement("input");
+	    //         hiddenField.setAttribute("type", "hidden");
+	    //         hiddenField.setAttribute("name", key);
+	    //         hiddenField.setAttribute("value", params[key]);
+
+	    //         form.appendChild(hiddenField);
+	    //      }
+	    // }
+
+	    // document.body.appendChild(form);
+	    // form.submit();
+	    // return false;
+
+
+
+		// var data = 'page='+curPage+'&contents='+editor.getData();
+		// makepost('page/updatePage.php', 'b1', data);
 
 	}
 

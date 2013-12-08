@@ -21,9 +21,9 @@ try {
 	}
 }
 
-
+var posting=false;
 function makerequest(serverPage, objID) {
-	
+
 //	alert(serverPage); 
 	var obj = document.getElementById(objID);
 	xmlhttp.open("GET", serverPage);
@@ -31,11 +31,31 @@ function makerequest(serverPage, objID) {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			obj.innerHTML = xmlhttp.responseText;
 		}
-		else if (xmlhttp.readyState == 1) {	
+		else if (xmlhttp.readyState == 1 && posting==false) {	
 			obj.innerHTML = "<center><img src='images/loading.gif'></center>";
 		}
 	}
 	xmlhttp.send(null);
+
+	curPage = serverPage;
+}
+
+
+function makepost(serverPage, objID, data) {
+	posting=true;
+	var obj = document.getElementById(objID);
+	xmlhttp.open("POST", serverPage,true);
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			//obj.innerHTML = xmlhttp.responseText;
+		}
+		else if (xmlhttp.readyState == 1) {	
+			//obj.innerHTML = "<center><img src='images/loading.gif'></center>";
+		}
+	}
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send(data);
+	posting=false;
 }
 ////////////////////////////////////////////////////////
 
