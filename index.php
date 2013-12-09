@@ -11,115 +11,101 @@
 	<script type="text/javascript" src="include/clock.js"></script>
 	<script type="text/javascript" src="include/ckeditor.js"></script>
 	<script type="text/javascript">
-	var editor;
-	var curPage;
+		var editor;
+		var curPage;
 
-	function createEditor()
-	{
-		if ( document.getElementById('save') )
-			return;
+		function createEditor(){
 
-		var html = document.getElementById( 'b1' ).innerHTML;
+			if ( document.getElementById('save') )
+				return;
 
-		//create new div with id "editor" to create space for editing
-		var newEditor = document.createElement('div');
-		newEditor.id="editor";
+			var html = document.getElementById( 'b1' ).innerHTML;
 
-		//create new save & close btns
-		var saveBtn = document.createElement('button');
-		saveBtn.id="save";
-		saveBtn.textContent="Save";
-		saveBtn.style.float="right";
-		saveBtn.onClick='createEditor(); return false;';
-		var closeBtn = document.createElement('button');
-		closeBtn.id="close";
-		closeBtn.textContent="Close";
-		closeBtn.style.float="right";
-		close.onClick="removeEditor(); return false;"
-		document.getElementById('b1').appendChild(saveBtn);
-		document.getElementById('b1').appendChild(closeBtn);
+			//create new div with id "editor" to create space for editing
+			var newEditor = document.createElement('div');
+			newEditor.id="editor";
+
+			//create new save & close btns
+			var saveBtn = document.createElement('button');
+			saveBtn.id="save";
+			saveBtn.textContent="Save";
+			
+			var attrStyle = document.createAttribute("style");
+			var attrOnclick = document.createAttribute("onclick");
+
+			attrStyle.value = "float:right;";
+			attrOnclick.value = "saveEditor();";
+
+			saveBtn.setAttributeNode(attrStyle);
+			saveBtn.setAttributeNode(attrOnclick);
+
+			var closeBtn = document.createElement('button');
+			closeBtn.id="close";
+			closeBtn.textContent="Close";
+
+			var attrStyle = document.createAttribute("style");
+			var attrOnclick = document.createAttribute("onclick");
+
+			attrStyle.value = "float:right;";
+			attrOnclick.value = "removeEditor();";
+
+			closeBtn.setAttributeNode(attrStyle);
+			closeBtn.setAttributeNode(attrOnclick);
+			
+			document.getElementById('b1').appendChild(saveBtn);
+			document.getElementById('b1').appendChild(closeBtn);
 
 
-		document.getElementById('b1').appendChild(newEditor)
+			document.getElementById('b1').appendChild(newEditor)
 
-		//hide the original text
-		for(var i = 0; i<(document.getElementById('b1').children.length-3);i++){
-			document.getElementById('b1').children[i].style.display = "none";
+			//hide the original text
+			for(var i = 0; i<(document.getElementById('b1').children.length-3);i++){
+				document.getElementById('b1').children[i].style.display = "none";
+			}
+
+
+			// Create a new editor inside the <div id="editor">, setting its value to html
+			var config = {};
+			editor = CKEDITOR.appendTo( 'editor', config, html );
 		}
 
+		function removeEditor(){
 
-		// Create a new editor inside the <div id="editor">, setting its value to html
-		var config = {};
-		editor = CKEDITOR.appendTo( 'editor', config, html );
-	}
+			if ( !document.getElementById('save') )
+				return;
 
-	function removeEditor()
-	{
-		if ( !document.getElementById('save') )
-			return;
-var $data = editor.getData();
+			var $data = editor.getData();
 
-		// Retrieve the editor contents. In an Ajax application, this data would be
-		// sent to the server or used in any other way.
-		document.getElementById( 'b1' ).innerHTML = editor.getData();
-		//document.getElementById( 'contents' ).style.display = '';
-console.log($data)
-		// Destroy the editor.
-		editor.destroy();
-		editor = null;
+			// Retrieve the editor contents. In an Ajax application, this data would be
+			// sent to the server or used in any other way.
+			document.getElementById( 'b1' ).innerHTML = editor.getData();
+			//document.getElementById( 'contents' ).style.display = '';
+
+			// Destroy the editor.
+			editor.destroy();
+			editor = null;
 
 
-		//show the updated text
-		for(var i = 0; i<(document.getElementById('b1').children.length-1);i++){
-			document.getElementById('b1').children[i].style.display = "";
+			//show the updated text
+			for(var i = 0; i<(document.getElementById('b1').children.length-1);i++){
+				document.getElementById('b1').children[i].style.display = "";
+			}
+
 		}
 
-	}
+		function saveEditor(){
+			if ( !document.getElementById('save') )
+				return;
 
-	function saveEditor(){
-		if ( !document.getElementById('save') )
-			return;
+			var data = 'page='+curPage+'&contents='+editor.getData();
+			makepost('page/updatePage.php', 'b1', data);
+		}
 
-		var data = 'page='+curPage+'&contents='+editor.getData();
-		makepost('page/updatePage.php', 'b1', data);
-
-
-	    
-	    // var form = document.createElement("form");
-	    // form.setAttribute("method", "post");
-	    // form.setAttribute("action", "page/updatePage.php");
-	    // var params=new Array();
-	    // params["page"]=curPage;
-	    // params["contents"]=editor.getData();
-
-	    // for(var key in params) {
-	    //     if(params.hasOwnProperty(key)) {
-	    //         var hiddenField = document.createElement("input");
-	    //         hiddenField.setAttribute("type", "hidden");
-	    //         hiddenField.setAttribute("name", key);
-	    //         hiddenField.setAttribute("value", params[key]);
-
-	    //         form.appendChild(hiddenField);
-	    //      }
-	    // }
-
-	    // document.body.appendChild(form);
-	    // form.submit();
-	    // return false;
-
-
-
-		// var data = 'page='+curPage+'&contents='+editor.getData();
-		// makepost('page/updatePage.php', 'b1', data);
-
-	}
-
-	/*
-	Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
-	For licensing, see LICENSE.html or http://ckeditor.com/license
-	*/
-
-	CKEDITOR.stylesSet.add('default',[{name:'Blue Title',element:'h3',styles:{color:'Blue'}},{name:'Red Title',element:'h3',styles:{color:'Red'}},{name:'Marker: Yellow',element:'span',styles:{'background-color':'Yellow'}},{name:'Marker: Green',element:'span',styles:{'background-color':'Lime'}},{name:'Big',element:'big'},{name:'Small',element:'small'},{name:'Typewriter',element:'tt'},{name:'Computer Code',element:'code'},{name:'Keyboard Phrase',element:'kbd'},{name:'Sample Text',element:'samp'},{name:'Variable',element:'var'},{name:'Deleted Text',element:'del'},{name:'Inserted Text',element:'ins'},{name:'Cited Work',element:'cite'},{name:'Inline Quotation',element:'q'},{name:'Language: RTL',element:'span',attributes:{dir:'rtl'}},{name:'Language: LTR',element:'span',attributes:{dir:'ltr'}},{name:'Image on Left',element:'img',attributes:{style:'padding: 5px; margin-right: 5px',border:'2',align:'left'}},{name:'Image on Right',element:'img',attributes:{style:'padding: 5px; margin-left: 5px',border:'2',align:'right'}},{name:'Borderless Table',element:'table',styles:{'border-style':'hidden','background-color':'#E6E6FA'}},{name:'Square Bulleted List',element:'ul',styles:{'list-style-type':'square'}}]);
+		/*
+			Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+			For licensing, see LICENSE.html or http://ckeditor.com/license
+		*/
+		CKEDITOR.stylesSet.add('default',[{name:'Blue Title',element:'h3',styles:{color:'Blue'}},{name:'Red Title',element:'h3',styles:{color:'Red'}},{name:'Marker: Yellow',element:'span',styles:{'background-color':'Yellow'}},{name:'Marker: Green',element:'span',styles:{'background-color':'Lime'}},{name:'Big',element:'big'},{name:'Small',element:'small'},{name:'Typewriter',element:'tt'},{name:'Computer Code',element:'code'},{name:'Keyboard Phrase',element:'kbd'},{name:'Sample Text',element:'samp'},{name:'Variable',element:'var'},{name:'Deleted Text',element:'del'},{name:'Inserted Text',element:'ins'},{name:'Cited Work',element:'cite'},{name:'Inline Quotation',element:'q'},{name:'Language: RTL',element:'span',attributes:{dir:'rtl'}},{name:'Language: LTR',element:'span',attributes:{dir:'ltr'}},{name:'Image on Left',element:'img',attributes:{style:'padding: 5px; margin-right: 5px',border:'2',align:'left'}},{name:'Image on Right',element:'img',attributes:{style:'padding: 5px; margin-left: 5px',border:'2',align:'right'}},{name:'Borderless Table',element:'table',styles:{'border-style':'hidden','background-color':'#E6E6FA'}},{name:'Square Bulleted List',element:'ul',styles:{'list-style-type':'square'}}]);
 
 	</script>
 </head>
@@ -180,7 +166,7 @@ console.log($data)
 				</div>
 				<!-- end of left menu section -->
 			</td>
-
+			
 			<td valign="top" id="b1">
 				<!-- main section -->
 				<div><?php include("./page/".$opt.".php"); ?></div>
