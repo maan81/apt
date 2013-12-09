@@ -10,4 +10,19 @@ CKEDITOR.editorConfig = function( config )
 	// config.uiColor = '#AADC6E';
 
 	config.entities = false;
+	//config.bodyClass = 'content'; //class that body needs to refer to
+
+	
+	config.toolbar =[
+					    [ 	'Source', 'Save','-', 
+					    	'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',  
+					    	'Undo', 'Redo', '-',
+					    	'Bold', 'Italic','Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat', '-',
+					    	'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+					    	'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-',
+					    	'Link', 'Unlink', 'Anchor', '-',
+					    	'Image','HorizontalRule', '-',
+					    	'Styles', 'Format', 'Font', 'FontSize'
+				    	]
+					];
 };
