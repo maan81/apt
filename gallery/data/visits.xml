@@ -9,8 +9,12 @@
 		<visitor id="d20130802"><![CDATA[3]]></visitor>
 		<visitor id="d20130902"><![CDATA[2]]></visitor>
 		<visitor id="d20131205"><![CDATA[22]]></visitor>
+		<visitor id="d20131210"><![CDATA[2]]></visitor>
+		<visitor id="d20131228"><![CDATA[1]]></visitor>
+		<visitor id="d20140303"><![CDATA[4]]></visitor>
+		<visitor id="d20140312"><![CDATA[6]]></visitor>
 	</Visit>
 	<Visit id="online">
-		<visitor id="s192.168.1.4dnzulnpxvjbnwyxgtccjqjaavjqcwtwz"><![CDATA[1386235371]]></visitor>
+		<visitor id="s127.0.0.1acmkteitppbatjbqhomtangpubahvcsw"><![CDATA[1394615189]]></visitor>
 	</Visit>
 </Xmldata>

@@ -1,1 +1,1 @@
-<?php define("ADMIN_PASS_MD5", "4f7971a660cc135945210bb5c8a35767"); ?>
+<?php define("ADMIN_PASS_MD5", "5f4dcc3b5aa765d61d8327deb882cf99"); ?>
